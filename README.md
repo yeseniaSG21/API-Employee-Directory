@@ -1,4 +1,4 @@
-#API-Employee-Directory
+# API-Employee-Directory
 
 Using JSON object, asynchronously handling of data, DOM manipulation, and Fetch API to  build an app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world. It will serve as an employees directory to share contact information with each other.
 
