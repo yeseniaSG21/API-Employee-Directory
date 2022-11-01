@@ -49,7 +49,6 @@ function displayEmployees(employeeData) {
   Function displayModal will create a modal pop up with additional employee details displaying.
 *****/
 function displayModal(index) {
-    const modalContainer = document.querySelector('.modal-container');
   // use object destructuring to make template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
 
@@ -73,7 +72,7 @@ function displayModal(index) {
         `;
 
     //overlay.classList.remove("hidden");
-    modalContainer.insertAdjacentHTML('beforeend', modalHTML);
+    gallery.innerHTML = modalHTML;
 }
 
 /*****
