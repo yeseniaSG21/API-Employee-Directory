@@ -72,7 +72,7 @@ function displayModal(index) {
             </div>
         `;
 
-    overlay.classList.remove("hidden");
+    //overlay.classList.remove("hidden");
     modalContainer.insertAdjacentHTML('beforeend', modalHTML);
 }
 
