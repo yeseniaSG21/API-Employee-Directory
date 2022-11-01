@@ -25,6 +25,7 @@ function displayEmployees(employeeData) {
     let name = employee.name;
     let email = employee.email;
     let city = employee.location.city;
+    let state = employee.location.state;
     let picture = employee.picture;
 
     employeeHTML += `
@@ -35,12 +36,15 @@ function displayEmployees(employeeData) {
         <div class="card-info-container">
           <h3 id="name" class="card-name cap">${name.first} ${name.last}</h3>
           <p class="card-text">${email}</p>
-          <p class="card-text cap">${city}</p>
+          <p class="card-text cap">${city}, ${state}</p>
         </div>
       </div>
     `
   });
 
   gallery.insertAdjacentHTML('beforeend', employeeHTML);
-
 }
+
+/*****
+
+*****/
