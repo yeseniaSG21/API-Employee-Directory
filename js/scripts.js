@@ -46,5 +46,32 @@ function displayEmployees(employeeData) {
 }
 
 /*****
-
+  Function displayModal will create a modal pop up with additional employee details displaying.
 *****/
+function displayModal(index) {
+    const modalContainer = document.querySelector('.modal-container');
+  // use object destructuring to make template literal cleaner
+    let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
+
+    let date = new Date(dob.date);
+
+    const modalHTML = `
+        <div class="modal-container">
+            <div class="modal">
+                <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+                <div class="modal-info-container">
+                    <img class="modal-img" src="${picture.large}" alt="profile picture">
+                    <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
+                    <p class="modal-text">${email}</p>
+                    <p class="modal-text cap">${city}</p>
+                    <hr>
+                    <p class="modal-text">${phone}</p>
+                    <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
+                    <p class="modal-text">Birthday: ${date}</p>
+                </div>
+            </div>
+        `;
+
+    overlay.classList.remove("hidden");
+    modalContainer.innerHTML = modalHTML;
+}
