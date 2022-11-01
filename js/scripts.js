@@ -73,5 +73,5 @@ function displayModal(index) {
         `;
 
     overlay.classList.remove("hidden");
-    modalContainer.innerHTML = modalHTML;
+    modalContainer.insertAdjacentHTML('beforeend', modalHTML);
 }
