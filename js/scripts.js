@@ -74,7 +74,6 @@ function displayModal(index) {
             </div>
         `;
 
-    //overlay.classList.remove("hidden");
     gallery.innerHTML = modalHTML;
 }
 
