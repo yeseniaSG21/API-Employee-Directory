@@ -80,12 +80,11 @@ function displayModal(index) {
   Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
   When the X is clicked on the modal, add hidden class to the modal overlay.
 *****/
-gridContainer.addEventListener('click', event => {
+gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
-  if (event.target !== gridContainer) {
-    // select the card element based on its proximity to actual element
-clicked
-    const card = e.target.closest(".card");
+  if (event.target !== gallery) {
+    // select the card element based on its proximity to actual element clicked
+    const card = event.target.closest(".card");
     const index = card.getAttribute('data-index');
     displayModal(index);
   }
