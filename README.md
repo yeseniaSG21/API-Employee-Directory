@@ -7,3 +7,5 @@ It will use the Random User Generator API (https://randomuser.me/) to grab infor
 A JSON object will be requested from the API and parsed the data so that 12 employees are listed in a grid with their thumbnail image, full name, email, and location. Clicking the employee’s image or name will open a modal window with more detailed information, such as the employee’s birthday and address.
 
 Frameworks, libraries or plugins were not permitted, only plain JavaScript.
+
+The mockups folder will demonstrate examples on how the directory and modal window will look. 
