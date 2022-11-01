@@ -66,7 +66,7 @@ function displayModal(index) {
                     <p class="modal-text cap">${city}</p>
                     <hr>
                     <p class="modal-text">${phone}</p>
-                    <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
+                    <p class="modal-text">${street}, ${state} ${postcode}</p>
                     <p class="modal-text">Birthday: ${date}</p>
                 </div>
             </div>
@@ -75,3 +75,18 @@ function displayModal(index) {
     overlay.classList.remove("hidden");
     modalContainer.insertAdjacentHTML('beforeend', modalHTML);
 }
+
+/*****
+  Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
+  When the X is clicked on the modal, add hidden class to the modal overlay.
+*****/
+gridContainer.addEventListener('click', event => {
+  // make sure the click is not on the gridContainer itself
+  if (event.target !== gridContainer) {
+    // select the card element based on its proximity to actual element
+clicked
+    const card = e.target.closest(".card");
+    const index = card.getAttribute('data-index');
+    displayModal(index);
+  }
+});
