@@ -53,6 +53,11 @@ function displayModal(index) {
     let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
 
     let date = new Date(dob.date);
+    let month = 'date.getMonth()';
+      month = parseInt(month.padStart(2, "0"));
+    let day = 'date.getDate()';
+      day = parseInt(day.padStart(2, "0"));
+
 
     const modalHTML = `
         <div class="modal-container">
@@ -66,7 +71,7 @@ function displayModal(index) {
                     <hr>
                     <p class="modal-text">${phone}</p>
                     <p class="modal-text">${street}, ${state} ${postcode}</p>
-                    <p class="modal-text">Birthday: ${date}</p>
+                    <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
                 </div>
             </div>
         `;
