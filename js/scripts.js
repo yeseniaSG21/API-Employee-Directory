@@ -52,12 +52,10 @@ function displayModal(index) {
   // use object destructuring to make template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
 
+    //Format the date and month to make sure the Birthday Format is: MM/DD/YYYY
     let date = new Date(dob.date);
-    let month = 'date.getMonth()';
-      month = parseInt(month.padStart(2, "0"));
-    let day = 'date.getDate()';
-      day = parseInt(day.padStart(2, "0"));
-
+    let month = String(date.getMonth() + 1).padStart(2, "0");
+    let day = String(date.getDate() +1).padStart(2, "0");
 
     const modalHTML = `
         <div class="modal-container">
