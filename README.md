@@ -1,6 +1,6 @@
 # API-Employee-Directory
 
-Using JSON object, asynchronously handling of data, DOM manipulation, and Fetch API to  build an app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world. It will serve as an employees directory to share contact information with each other.
+Using JSON object, asynchronously handling of data, DOM manipulation, and Fetch API to build an app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world. It will serve as an employees directory to share contact information with each other.
 
 It will use the Random User Generator API (https://randomuser.me/) to grab information for 12 random “employees,” and use that data to build a prototype for an Awesome Startup employee directory.
 
@@ -8,4 +8,4 @@ A JSON object will be requested from the API and parsed the data so that 12 empl
 
 Frameworks, libraries or plugins were not permitted, only plain JavaScript.
 
-The mockups folder will demonstrate examples on how the directory and modal window will look. 
+The mockups folder will demonstrate examples on how the directory and modal window will look.
