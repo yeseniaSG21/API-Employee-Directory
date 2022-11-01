@@ -90,3 +90,10 @@ gallery.addEventListener('click', event => {
     displayModal(index);
   }
 });
+
+
+const modalClose = document.getElementById('modal-close-btn');
+
+modalClose.addEventListener('click', () => {
+  overlay.classList.add("hidden"); <------------------------------------Look into this....
+});
