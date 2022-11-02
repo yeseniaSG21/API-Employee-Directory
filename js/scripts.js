@@ -8,7 +8,7 @@ const modalClose = document.querySelector('.modal-close-btn');
 const modalContainer = document.querySelector(".modal-container");
 
 /*****
-  Fetch data from the API
+  Fetch 12 random employee data from the API
 *****/
 fetch('https://randomuser.me/api/?results=12&nat=US')
   .then(response => response.json())
