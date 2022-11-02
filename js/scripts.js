@@ -74,7 +74,7 @@ function displayModal(index) {
             </div>
         `;
 
-    gallery.innerHTML = modalHTML;
+    gallery.insertAdjacentHTML('beforeend', modalHTML);
 }
 
 /*****
@@ -91,8 +91,10 @@ gallery.addEventListener('click', event => {
   }
 });
 
+//When the user clicks the X, the modal will close
 const modalClose = document.getElementById('modal-close-btn');
+const modalContainer = document.querySelector('modal-container');
 
 modalClose.addEventListener('click', () => {
-
+  modalContainer.style.display = 'none';
 });
