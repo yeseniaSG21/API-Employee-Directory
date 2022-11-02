@@ -81,10 +81,10 @@ function displayModal(index) {
   When the X is clicked on the modal, add hidden class to the modal overlay.
 *****/
 
-//Stores the DOM element that is the modal’s close button
-const modalClose = document.querySelector('.modal-close-btn');
 //Stores the DOM element that is a container for the modal information
 const modalContainer = document.querySelector(".modal-container");
+//Stores the DOM element that is the modal’s close button
+const modalClose = document.querySelector(".modal-close-btn");
 
 gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
@@ -93,11 +93,12 @@ gallery.addEventListener('click', event => {
     const card = event.target.closest(".card");
     const index = card.getAttribute('data-index');
     displayModal(index);
-    modalContainer.style.display = 'block';
   }
 });
 
 //When the user clicks the X, the modal will close
-modalClose.addEventListener('click', () => {
-    modalContainer.style.display = 'none';
+modalClose.addEventListener('click', event => {
+  if (event.classList.contains('modal-close-btn')) {
+    modalContainer.removeChild(modalContainer);
+  }
 });
