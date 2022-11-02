@@ -99,5 +99,5 @@ gallery.addEventListener('click', event => {
 
 //When the user clicks the X, the modal will close
 modalClose.addEventListener('click', () => {
-  modalContainer.style.display = 'none';
+    modalContainer.style.display = 'none';
 });
