@@ -21,31 +21,31 @@ fetch('https://randomuser.me/api/?results=12&nat=US')
   It will loop through each of the 12 employees to add each to the HTML through a template literal.
 *****/
 function displayEmployees(employeeData) {
-  employees = employeeData;
-  let employeeHTML = '';
+    employees = employeeData;
+    let employeeHTML = '';
 
-  employees.forEach((employee, index) => {
-    let name = employee.name;
-    let email = employee.email;
-    let city = employee.location.city;
-    let state = employee.location.state;
-    let picture = employee.picture;
+    employees.forEach((employee, index) => {
+      let name = employee.name;
+      let email = employee.email;
+      let city = employee.location.city;
+      let state = employee.location.state;
+      let picture = employee.picture;
 
-    employeeHTML += `
-      <div class="card" data-index="${index}">
-        <div class="card-img-container">
-            <img class="card-img" src="${picture.large}">
+      employeeHTML += `
+        <div class="card" data-index="${index}">
+          <div class="card-img-container">
+              <img class="card-img" src="${picture.large}">
+          </div>
+          <div class="card-info-container">
+            <h3 id="name" class="card-name cap">${name.first} ${name.last}</h3>
+            <p class="card-text">${email}</p>
+            <p class="card-text cap">${city}, ${state}</p>
+          </div>
         </div>
-        <div class="card-info-container">
-          <h3 id="name" class="card-name cap">${name.first} ${name.last}</h3>
-          <p class="card-text">${email}</p>
-          <p class="card-text cap">${city}, ${state}</p>
-        </div>
-      </div>
-    `
-  });
+      `
+    });
 
-  gallery.insertAdjacentHTML('beforeend', employeeHTML);
+    gallery.insertAdjacentHTML('beforeend', employeeHTML);
 }
 
 /*****
@@ -60,7 +60,7 @@ function displayModal(index) {
     let month = String(date.getMonth() + 1).padStart(2, "0");
     let day = String(date.getDate() +1).padStart(2, "0");
 
-    let modalHTML = `
+    const modalHTML = `
         <div class="modal-container">
             <div class="modal">
                 <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
@@ -73,6 +73,7 @@ function displayModal(index) {
                     <p class="modal-text">${phone}</p>
                     <p class="modal-text">${street.number} ${street.name} ${city}, ${state} ${postcode}</p>
                     <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
+                </div>
             </div>
         </div>
         `;
@@ -83,23 +84,20 @@ function displayModal(index) {
 /*****
   Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
 *****/
-
-
 gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
   if (event.target !== gallery) {
       // select the card element based on its proximity to actual element clicked
       let card = event.target.closest(".card");
-      const index = card.getAttribute('data-index');
+      const index = card.getAttribute('data-index')
       displayModal(index);
-      modalContainer.style.display = 'block';
+      modalClose.style.display = 'block';
   }
 });
 
-
   // When the X is clicked on the modal, modal closes
-  modalContainer.addEventListener('click', event => {
+  gallery.addEventListener('click', () => {
     if (event.target.closest('.modal-close-btn')) {
-      modalContainer.style.display = 'none';
+      modalClose.style.display = 'none';
     }
   });
