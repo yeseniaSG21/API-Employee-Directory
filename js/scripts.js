@@ -78,12 +78,12 @@ function displayModal(index) {
   //Stores the DOM element that is a container for the modal information
   const modalContainer = document.querySelector('.modal-container');
   //Stores the DOM element that is the modal’s close button
-  const modalClose = document.querySelector(".modal-close-btn");
+  const modalClose = document.querySelector("#modal-close-btn");
 
   // When the X is clicked on the modal, modal closes
-  modelClose.addEventListener('click', event => {
-    if (event.target.classList.contains('modal-close-btn')) {
-      modalContainer.remove();
+  modalContainer.addEventListener('click', event => {
+    if (event.target.closest('.modal-close-btn')) {
+      modalContainer.style.display = 'none';
     }
   });
 }
