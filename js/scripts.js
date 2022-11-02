@@ -60,6 +60,7 @@ function displayModal(index) {
     let month = String(date.getMonth() + 1).padStart(2, "0");
     let day = String(date.getDate() +1).padStart(2, "0");
 
+    //Selecting the Modal DOM to make employee information display
     const modalInfo = document.querySelector('.modal-info-container');
 
     const modalHTML = `
