@@ -2,6 +2,10 @@
 let employees = [];
 //Stores the DOM element that is the container for the employees
 const gallery = document.getElementById('gallery');
+//Stores the DOM element that is a container for the modal information
+const modalContainer = document.querySelector('.modal-container');
+//Stores the DOM element that is the modal’s close button
+const modalClose = document.querySelector('.modal-close-btn');
 
 /*****
   Fetch 12 random employee data from the API
@@ -80,8 +84,6 @@ function displayModal(index) {
   Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
 *****/
 
-//Stores the DOM element that is a container for the modal information
-const modalContainer = document.querySelector('.modal-container');
 
 gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
@@ -94,8 +96,6 @@ gallery.addEventListener('click', event => {
   }
 });
 
-  //Stores the DOM element that is the modal’s close button
-  const modalClose = document.querySelector("#modal-close-btn");
 
   // When the X is clicked on the modal, modal closes
   modalContainer.addEventListener('click', event => {
