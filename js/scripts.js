@@ -65,7 +65,7 @@ function displayModal(index) {
                     <img class="modal-img" src="${picture.large}" alt="profile picture">
                     <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
                     <p class="modal-text">${email}</p>
-                    <p class="modal-text cap">${city}</p>
+                    <p class="modal-text cap">${city}, ${state}</p>
                     <hr>
                     <p class="modal-text">${phone}</p>
                     <p class="modal-text">${street}, ${state} ${postcode}</p>
@@ -91,9 +91,8 @@ gallery.addEventListener('click', event => {
   }
 });
 
-
 const modalClose = document.getElementById('modal-close-btn');
 
 modalClose.addEventListener('click', () => {
-  overlay.classList.add("hidden"); <------------------------------------Look into this....
+
 });
