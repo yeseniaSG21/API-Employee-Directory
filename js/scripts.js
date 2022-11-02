@@ -74,9 +74,26 @@ function displayModal(index) {
         `;
 
     gallery.insertAdjacentHTML('beforeend', modalHTML);
+}
 
-  //Stores the DOM element that is a container for the modal information
-  const modalContainer = document.querySelector('.modal-container');
+/*****
+  Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
+*****/
+
+//Stores the DOM element that is a container for the modal information
+const modalContainer = document.querySelector('.modal-container');
+
+gallery.addEventListener('click', event => {
+  // make sure the click is not on the gridContainer itself
+  if (event.target !== gallery) {
+      // select the card element based on its proximity to actual element clicked
+      let card = event.target.closest(".card");
+      const index = card.getAttribute('data-index');
+      displayModal(index);
+      modalContainer.style.display = 'block';
+  }
+});
+
   //Stores the DOM element that is the modal’s close button
   const modalClose = document.querySelector("#modal-close-btn");
 
@@ -86,17 +103,3 @@ function displayModal(index) {
       modalContainer.style.display = 'none';
     }
   });
-}
-
-/*****
-  Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
-*****/
-gallery.addEventListener('click', event => {
-  // make sure the click is not on the gridContainer itself
-  if (event.target !== gallery) {
-      // select the card element based on its proximity to actual element clicked
-      let card = event.target.closest(".card");
-      const index = card.getAttribute("data-index");
-      displayModal(index);
-  }
-});
