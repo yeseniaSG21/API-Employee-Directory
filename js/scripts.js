@@ -60,11 +60,9 @@ function displayModal(index) {
     let month = String(date.getMonth() + 1).padStart(2, "0");
     let day = String(date.getDate() +1).padStart(2, "0");
 
+    const modalInfo = document.querySelector('.modal-info-container');
+
     const modalHTML = `
-        <div class="modal-container">
-            <div class="modal">
-                <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
-                <div class="modal-info-container">
                     <img class="modal-img" src="${picture.large}" alt="profile picture">
                     <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
                     <p class="modal-text">${email}</p>
@@ -72,13 +70,9 @@ function displayModal(index) {
                     <hr>
                     <p class="modal-text">${phone}</p>
                     <p class="modal-text">${street.number} ${street.name} ${city}, ${state} ${postcode}</p>
-                    <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
-                </div>
-            </div>
-        </div>
-        `;
+                    <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>`;
 
-    gallery.insertAdjacentHTML('beforeend', modalHTML);
+    modalInfo.innerHTML = modalHTML;
 }
 
 /*****
@@ -91,13 +85,11 @@ gallery.addEventListener('click', event => {
       let card = event.target.closest(".card");
       const index = card.getAttribute('data-index')
       displayModal(index);
-      modalClose.style.display = 'block';
+      modalContainer.style.display = 'block';
   }
 });
 
   // When the X is clicked on the modal, modal closes
-  gallery.addEventListener('click', () => {
-    if (event.target.closest('.modal-close-btn')) {
-      modalClose.style.display = 'none';
-    }
-  });
+modalClose.addEventListener('click', () => {
+      modalContainer.style.display = 'none';
+});
