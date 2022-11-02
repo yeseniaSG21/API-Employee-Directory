@@ -68,7 +68,7 @@ function displayModal(index) {
                     <p class="modal-text cap">${city}, ${state}</p>
                     <hr>
                     <p class="modal-text">${phone}</p>
-                    <p class="modal-text">${street}, ${state} ${postcode}</p>
+                    <p class="modal-text">${street.number} ${street.name}, ${state} ${postcode}</p>
                     <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
                 </div>
             </div>
@@ -93,7 +93,7 @@ gallery.addEventListener('click', event => {
 
 //When the user clicks the X, the modal will close
 const modalClose = document.getElementById('modal-close-btn');
-const modalContainer = document.querySelector('modal-container');
+const modalContainer = document.querySelector('.modal-container');
 
 modalClose.addEventListener('click', () => {
   modalContainer.style.display = 'none';
