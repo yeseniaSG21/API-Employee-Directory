@@ -88,11 +88,12 @@ gallery.addEventListener('click', event => {
     const card = event.target.closest(".card");
     const index = card.getAttribute('data-index');
     displayModal(index);
+    modalContainer.style.display = 'block';
   }
 });
 
 //When the user clicks the X, the modal will close
-const modalClose = document.getElementById('modal-close-btn');
+const modalClose = document.querySelector('.modal-close-btn');
 const modalContainer = document.querySelector('.modal-container');
 
 modalClose.addEventListener('click', () => {
