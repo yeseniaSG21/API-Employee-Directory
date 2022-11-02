@@ -1,8 +1,11 @@
 //Empty array that will hold values from the API
 let employees = [];
-
 //Stores the DOM element that is the container for the employees
 const gallery = document.getElementById('gallery');
+//Stores the DOM element that is the modal’s close button
+const modalClose = document.querySelector('.modal-close-btn');
+//Stores the DOM element that is a container for the modal information
+const modalContainer = document.querySelector(".modal-container");
 
 /*****
   Fetch data from the API
@@ -93,9 +96,6 @@ gallery.addEventListener('click', event => {
 });
 
 //When the user clicks the X, the modal will close
-const modalClose = document.querySelector('.modal-close-btn');
-const modalContainer = document.querySelector('.modal-container');
-
 modalClose.addEventListener('click', () => {
   modalContainer.style.display = 'none';
 });
