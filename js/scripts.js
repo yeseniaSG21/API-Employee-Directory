@@ -68,7 +68,7 @@ function displayModal(index) {
                     <p class="modal-text cap">${city}, ${state}</p>
                     <hr>
                     <p class="modal-text">${phone}</p>
-                    <p class="modal-text">${street.number} ${street.name}, ${state} ${postcode}</p>
+                    <p class="modal-text">${street.number} ${street.name} ${street.city}, ${state} ${postcode}</p>
                     <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
                 </div>
             </div>
