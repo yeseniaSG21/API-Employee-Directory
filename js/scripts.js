@@ -56,7 +56,7 @@ function displayModal(index) {
     let month = String(date.getMonth() + 1).padStart(2, "0");
     let day = String(date.getDate() +1).padStart(2, "0");
 
-    const modalHTML = `
+    let modalHTML = `
         <div class="modal-container">
             <div class="modal">
                 <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
@@ -69,20 +69,20 @@ function displayModal(index) {
                     <p class="modal-text">${phone}</p>
                     <p class="modal-text">${street.number} ${street.name} ${city}, ${state} ${postcode}</p>
                     <p class="modal-text">Birthday: ${month}/${day}/${date.getFullYear()}</p>
-                </div>
             </div>
+        </div>
         `;
 
     gallery.insertAdjacentHTML('beforeend', modalHTML);
 
   //Stores the DOM element that is a container for the modal information
-  const modalContainer = document.querySelector(".modal-container");
+  const modalContainer = document.querySelector('.modal-container');
   //Stores the DOM element that is the modal’s close button
   const modalClose = document.querySelector(".modal-close-btn");
 
   // When the X is clicked on the modal, modal closes
-  gallery.addEventListener('click', event => {
-    if (event.target.matches('modal-close-btn')) {
+  modelClose.addEventListener('click', event => {
+    if (event.target.classList.contains('modal-close-btn')) {
       modalContainer.remove();
     }
   });
@@ -91,12 +91,11 @@ function displayModal(index) {
 /*****
   Event Listeners: when any part of an employee card is clicked, the modal window should pop up.
 *****/
-
 gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
   if (event.target !== gallery) {
       // select the card element based on its proximity to actual element clicked
-      const card = event.target.closest(".card");
+      let card = event.target.closest(".card");
       const index = card.getAttribute("data-index");
       displayModal(index);
   }
