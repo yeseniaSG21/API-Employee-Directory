@@ -83,7 +83,7 @@ function displayModal(index) {
   // When the X is clicked on the modal, modal closes
   gallery.addEventListener('click', event => {
     if (event.target.matches('modal-close-btn')) {
-      modalContainer.removeChild(modalContainer);
+      modalContainer.remove();
     }
   });
 }
@@ -95,9 +95,9 @@ function displayModal(index) {
 gallery.addEventListener('click', event => {
   // make sure the click is not on the gridContainer itself
   if (event.target !== gallery) {
-    // select the card element based on its proximity to actual element clicked
-    const card = event.target.closest(".card");
-    const index = card.getAttribute('data-index');
-    displayModal(index);
+      // select the card element based on its proximity to actual element clicked
+      const card = event.target.closest(".card");
+      const index = card.getAttribute("data-index");
+      displayModal(index);
   }
 });
